@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Portfolio</div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="animate-text">Hello, I'm Gian</h1>
+            <p class="animate-text-delay">Developer • Reader • Writer</p>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="animate-on-scroll">Hello! I'm a 20 year old passionate developer on my way to become a full-stack web developer, currently honing my skills in <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>. <br><strong>JavaScript</strong> is my specialized programming language.</p>
+                    <p class="animate-on-scroll">I am currently pursuing a <span class="highlight">Bachelor of Science in Information Technology</span> from the <span class="university">University of Negros Occidental Recoletos</span></p>
+                    <p class="animate-on-scroll">My skills include:</p>
+                    <ul class="skills-list">
+                        <li class="animate-on-scroll">Frontend Development (<strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>)</li>
+                    </ul>
+                    <p class="animate-on-scroll">When I'm not coding, you can find me writing technical blogs, contributing to open-source projects, or exploring new technologies.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/avatar.jpg" alt="Profile Picture" class="profile-pic animate-on-scroll">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <img src="images/roman-numerals-converter.png" alt="Project 1">
+                    </div>
+                    <div class="project-content">
+                        <h3>Roman Numerals Converter</h3>
+                        <p>A web application that converts Roman numerals to Arabic numbers. Built with HTML, CSS, and JavaScript.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <img src="images/number-sorter.png" alt="Project 2">
+                    </div>
+                    <div class="project-content">
+                        <h3>Number Sorter</h3>
+                        <p>A web application that sorts a list of numbers in ascending or descending order. Built with HTML, CSS, and JavaScript.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <img src="images/spam-detector.png" alt="Project 3">
+                    </div>
+                    <div class="project-content">
+                        <h3>Spam Detector</h3>
+                        <p>Detects spam messages using regex matching. Built with HTML, CSS, and JavaScript.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog-section">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="programming">Programming</button>
+        </div>
+        <div class="blog-grid" id="blogGrid">
+            <!-- Blog posts will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Your Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex: Lookahead and Lookbehind Assertions</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="blog-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand"><a href="../index.html">Portfolio</a></div>
+        <div class="nav-links">
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="../index.html#blog" class="active">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main class="blog-post">
+        <article>
+            <header class="post-header">
+                <h1>Regex: Lookahead and Lookbehind Assertions</h1>
+                <div class="post-meta">
+                    <span class="post-date">January 13, 2025</span>
+                    <span class="post-category">Programming</span>
+                </div>
+            </header>
+
+            <div class="post-content">
+                <p>Regular expressions (regex) are powerful tools for pattern matching and text manipulation. In this post, we'll explore lookahead and lookbehind assertions - features that help us match patterns based on what comes before or after them, without including those parts in the match.</p>
+
+                <h2>What are Lookaround Assertions?</h2>
+                <p>Think of lookaround assertions as a way to peek at the text around your current position without including it in your match. It's like looking left and right before crossing the street - you check what's there, but you don't actually move there.</p>
+
+                <h2>Lookahead and Negative Lookahead</h2>
+                <p>Lookahead assertions allow you to match a pattern only if it is followed by another pattern. They are denoted by <code>(?=pattern)</code>. Negative lookahead assertions, on the other hand, allow you to match a pattern only if it is NOT followed by another pattern. They are denoted by <code>(?!pattern)</code>.</p>
+
+                <h2>Lookahead Assertions</h2>
+                <p>Lookahead assertions allow you to match a group of characters only if they are followed by another group. They are denoted by the syntax <code>(?=...) </code>. For example:</p>
+                <pre><code class="language-regex token-line"><span class="token regex-assertion">(?=</span><span class="token regex-character-class">\D</span><span class="token regex-assertion">)</span><span class="token regex-character-class">\d</span></code></pre>
+                <p>This regex matches a digit <code>\d</code> only if it is followed by a non-digit character <code>\D</code>. So in the string <code>"5a 6b 7c"</code>, it will match <code>5</code>, <code>6</code>, and <code>7</code>.</p>
+
+                <h2>Negative Lookahead Assertions</h2>
+                <p>Negative lookahead assertions allow you to match a group of characters only if they are <strong>not</strong> followed by another group. They are denoted by the syntax <code>(?!...)</code>. For example:</p>
+                <pre><code class="language-regex token-line"><span class="token regex-assertion">(?!</span><span class="token regex-character-class">\D</span><span class="token regex-assertion">)</span><span class="token regex-character-class">\d</span></code></pre>
+                <p>This regex matches a digit <code>\d</code> only if it is <strong>not</strong> followed by a non-digit character <code>\D</code>. So in the string <code>"5a 6b 7c"</code>, it will not match any digits.</p>
+
+                <h3>Lookahead Example</h3>
+                <p>The regex <code>\d(?=\D)</code> matches a digit only if it is followed by a non-digit character.</p>
+                <pre><code class="language-javascript token-line"><span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-assertion">(?=</span><span class="token regex-character-class">\D</span><span class="token regex-assertion">)</span><span class="token regex-character-class">\d</span><span class="token regex-delimiter">/</span><span class="token regex-modifier">g</span></span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'3 cats and 4 dogs'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> matches <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token method-calls function property-access">match</span><span class="token punctuation">(</span>regex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token method-calls function console">console</span><span class="token punctuation">.</span><span class="token method-calls function property-access">log</span><span class="token punctuation">(</span>matches<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: ['3', '4']</span></code></pre>
+
+                <h3>Negative Lookahead Example</h3>
+                <p>The regex <code>\d(?!\D)</code> matches a digit only if it is NOT followed by a non-digit character.</p>
+                <pre><code class="language-javascript token-line"><span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-assertion">(?!</span><span class="token regex-character-class">\D</span><span class="token regex-assertion">)</span><span class="token regex-character-class">\d</span><span class="token regex-delimiter">/</span><span class="token regex-modifier">g</span></span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'3 cats and 4'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> matches <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token method-calls function property-access">match</span><span class="token punctuation">(</span>regex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token method-calls function console">console</span><span class="token punctuation">.</span><span class="token method-calls function property-access">log</span><span class="token punctuation">(</span>matches<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: ['3']</span></code></pre>
+
+                <h2>Common Uses</h2>
+                <ul>
+                    <li>Validating passwords (checking for specific characters)</li>
+                    <li>Parsing formatted text (like finding values after specific labels)</li>
+                    <li>Data extraction (getting specific parts of structured text)</li>
+                </ul>
+
+                <h2>Tips for Using Lookarounds</h2>
+                <ul>
+                    <li>Start simple - use basic patterns first</li>
+                    <li>Test your patterns with different inputs</li>
+                    <li>Remember that lookbehinds might not work in all browsers</li>
+                </ul>
+            </div>
+
+            <footer class="post-footer">
+                <div class="post-tags">
+                    <span>#regex</span>
+                    <span>#javascript</span>
+                    <span>#beginners</span>
+                </div>
+                <div class="post-nav">
+                    <a href="../index.html#blog" class="prev-post">← Back to Blog</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-regex.min.js"></script>
+</body>
+</html>

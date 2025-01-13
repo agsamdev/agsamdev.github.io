@@ -1,0 +1,216 @@
+/*Nav style*/
+
+.nav-brand a{
+    text-decoration: none;
+    color: var(--accent);
+}
+/* Blog Post Styles */
+.blog-post {
+    max-width: 800px;
+    margin: 80px auto 40px;
+    padding: 0 20px;
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.post-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.post-meta span {
+    margin: 0 10px;
+}
+
+.post-category {
+    color: var(--accent);
+}
+
+.post-content {
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.post-content h2 {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    margin: 2.5rem 0 1.5rem;
+}
+
+.post-content h3 {
+    color: var(--accent);
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content ul {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+.post-content pre {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: var(--bg-secondary) !important;
+}
+
+.post-content code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+.post-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--bg-secondary);
+}
+
+.post-tags {
+    margin-bottom: 2rem;
+}
+
+.post-tags span {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    margin: 0.3rem;
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--accent);
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.post-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.post-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+
+.post-nav a:hover {
+    color: var(--accent);
+    background: rgba(100, 255, 218, 0.1);
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+    border-top: 3px solid var(--accent);
+    text-align: center;
+}
+
+.contact-section .section-title {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: var(--accent);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+.submit-btn {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: darken(var(--accent), 10%);
+    transform: translateY(-2px);
+}
+
+/* Code block theme overrides */
+:not(pre) > code {
+    background: rgba(100, 255, 218, 0.1) !important;
+    color: var(--accent) !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 4px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-post {
+        margin-top: 60px;
+    }
+
+    .post-header h1 {
+        font-size: 2rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .post-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .post-content pre {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+}
