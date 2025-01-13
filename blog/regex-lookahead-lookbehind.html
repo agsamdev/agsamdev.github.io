@@ -41,12 +41,12 @@
                 <h2>Lookahead and Negative Lookahead</h2>
                 <p>Lookahead assertions allow you to match a pattern only if it is followed by another pattern. They are denoted by <code>(?=pattern)</code>. Negative lookahead assertions, on the other hand, allow you to match a pattern only if it is NOT followed by another pattern. They are denoted by <code>(?!pattern)</code>.</p>
 
-                <h2>Lookahead Assertions</h2>
+              <h3>Lookahead Assertions</h3>
                 <p>Lookahead assertions allow you to match a group of characters only if they are followed by another group. They are denoted by the syntax <code>(?=...) </code>. For example:</p>
                 <pre><code class="language-regex token-line"><span class="token regex-assertion">(?=</span><span class="token regex-character-class">\D</span><span class="token regex-assertion">)</span><span class="token regex-character-class">\d</span></code></pre>
                 <p>This regex matches a digit <code>\d</code> only if it is followed by a non-digit character <code>\D</code>. So in the string <code>"5a 6b 7c"</code>, it will match <code>5</code>, <code>6</code>, and <code>7</code>.</p>
 
-                <h2>Negative Lookahead Assertions</h2>
+                <h3>Negative Lookahead Assertions</h3>
                 <p>Negative lookahead assertions allow you to match a group of characters only if they are <strong>not</strong> followed by another group. They are denoted by the syntax <code>(?!...)</code>. For example:</p>
                 <pre><code class="language-regex token-line"><span class="token regex-assertion">(?!</span><span class="token regex-character-class">\D</span><span class="token regex-assertion">)</span><span class="token regex-character-class">\d</span></code></pre>
                 <p>This regex matches a digit <code>\d</code> only if it is <strong>not</strong> followed by a non-digit character <code>\D</code>. So in the string <code>"5a 6b 7c"</code>, it will not match any digits.</p>
