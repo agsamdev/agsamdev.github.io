@@ -1,0 +1,352 @@
+/* Color Variables */
+:root {
+    --primary-dark: #0a0a0a;
+    --primary-bg: #121212;
+    --primary-light: #1e1e1e;
+    --accent-primary: #00ff9d;
+    --accent-secondary: #ff00ff;
+    --accent-tertiary: #00ffff;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.87);
+    --text-muted: rgba(255, 255, 255, 0.6);
+    --surface-1: rgba(255, 255, 255, 0.05);
+    --surface-2: rgba(255, 255, 255, 0.08);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 255, 157, 0.2);
+    --glow-color: rgba(0, 255, 157, 0.4);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-dark);
+    color: var(--text-primary);
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Logo Styles */
+.logo-container {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+/* Glitch Effect */
+
+/* Base letter styling - Sets up the foundation for the glitch effect */
+.letter {
+    position: relative;              /* Enable positioning for pseudo-elements */
+    text-shadow: 0 0 10px var(--glow-color);  /* Basic text glow */
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+
+Individual letter colors and timing
+.letter:nth-child(1) {              
+    animation-delay: 0s;            /* First letter starts immediately */
+    color: var(--accent-primary);   /* Neon green color for 'R' */
+}
+
+.letter:nth-child(2) {              
+    animation-delay: 0.2s;          /* Second letter starts with delay */
+    color: var(--accent-secondary); /* Magenta color for 'N' */
+}
+
+.letter:nth-child(3) {              
+    animation-delay: 0.4s;          /* Third letter starts last */
+    color: var(--accent-tertiary);  /* Cyan color for 'C' */
+}
+
+/* Blur effect layer - Creates a ghosting effect behind letters */
+.letter::after {
+    content: attr(class);           /* Creates a copy of the letter */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateZ(-1px);    /* Pushes the copy slightly back */
+    filter: blur(5px);             /* Adds blur to create ghost effect */
+    opacity: 0.7;                  /* Makes the ghost slightly transparent */
+    animation: pulse 2s ease-in-out infinite;  /* Pulsing animation */
+}
+
+/* Glow effect layer - Adds a dynamic light source behind letters */
+.letter::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: currentColor;       /* Uses the letter's color */
+    filter: blur(0px);            /* Heavy blur for the glow */
+    opacity: 0;                    /* Starts invisible */
+    transform: translate(-50%, -50%);  /* Centers the glow */
+    animation: glow 2s ease-in-out infinite;  /* Glow pulsing */
+}
+
+/* Glitch Effect End */
+
+/* Container Styles */
+.container {
+    background-color: var(--primary-light);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 20px var(--shadow-color);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        var(--accent-primary),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: borderLight 3s linear infinite;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+/* Typography */
+h1 {
+    color: var(--text-primary);
+    margin-bottom: 1.8rem;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* Form Elements */
+input[type="number"] {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--surface-1);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    background-color: var(--surface-2);
+    box-shadow: 0 0 0 4px var(--shadow-color);
+}
+
+input[type="number"]::placeholder {
+    color: var(--text-muted);
+}
+
+/* Remove default number input arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Button Styles */
+#convert-btn {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--primary-dark);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+#convert-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+#convert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px var(--glow-color);
+}
+
+#convert-btn:hover::before {
+    left: 100%;
+}
+
+#convert-btn:active {
+    transform: translateY(0);
+}
+
+/* Output Display */
+#output {
+    margin-top: 1.8rem;
+    padding: 1.2rem;
+    background-color: var(--surface-1);
+    border-radius: 8px;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+#output::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        var(--accent-tertiary),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: borderLight 6s linear infinite;
+    opacity: 0.05;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);  /* Start/end position */
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);  /* Peak of float with tilt */
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;              /* Semi-transparent at start/end */
+        filter: blur(5px);         /* Light blur */
+    }
+    50% {
+        opacity: 1;                /* Fully visible at peak */
+        filter: blur(10px);        /* Heavier blur at peak */
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        opacity: 0;                /* Invisible at start/end */
+        width: 0%;
+        height: 0%;               /* Glow starts as a point */
+    }
+    50% {
+        opacity: 0.3;             /* Partially visible at peak */
+        width: 100%;
+        height: 100%;            /* Glow expands to full size */
+    }
+}
+
+@keyframes glitch {
+    0%, 100% { 
+        clip-path: inset(0 0 0 0);  /* No clipping */
+        transform: translate(0);     /* Centered position */
+    }
+    10% {
+        clip-path: inset(10% 0 80% 0);  /* Clips top/bottom sections */
+        transform: translate(-2px, 2px); /* Slight offset */
+    }
+    20% {
+        clip-path: inset(80% 0 10% 0);  /* Different clip pattern */
+        transform: translate(2px, -2px); /* Opposite offset */
+    }
+    30% {
+        clip-path: inset(30% 0 60% 0);  /* Another clip variation */
+        transform: translate(1px, 1px);  /* Small offset */
+    }
+    40% {
+        clip-path: inset(50% 0 30% 0);  /* More variation */
+        transform: translate(-1px, -1px);/* Different offset */
+    }
+    50% {
+        clip-path: inset(20% 0 70% 0);  /* Final clip pattern */
+        transform: translate(2px, 2px);  /* Final offset */
+    }
+}
+
+@keyframes borderLight {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
