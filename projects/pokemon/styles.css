@@ -1,0 +1,405 @@
+/* Ascend theme variables */
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --background-start: #0f172a;
+    --background-end: #1e293b;
+    --text-color: #e2e8f0;
+    --text-muted: #94a3b8;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --border-radius: 16px;
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, var(--background-start), var(--background-end));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-color);
+  }
+  
+  main {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #818cf8, #6366f1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: var(--glass-border);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  /* Input and Button styles */
+  input[type="text"] {
+    width: 100%;
+    padding: 1.25rem;
+    margin: 1rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: var(--transition);
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  }
+  
+  button {
+    width: 100%;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  /* Pokemon Info Styles */
+  #pokemon-info {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: var(--glass-border);
+    display: none;
+  }
+  
+  #pokemon-info.active {
+    display: block;
+    animation: ascendFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  #name-id, #weight-height {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+  }
+  
+  .sprite-container {
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0;
+  }
+  
+  #pokemon-sprite {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.3));
+    transition: var(--transition);
+  }
+  
+  #pokemon-sprite:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.5));
+  }
+  
+  #types {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  #types span {
+    padding: 0.75rem 1.75rem;
+    border-radius: 24px;
+    color: white;
+    font-weight: 500;
+    text-transform: capitalize;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+  }
+  
+  #pokemon-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  
+  .stat-container {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.25rem;
+    border-radius: var(--border-radius);
+    border: var(--glass-border);
+    text-align: center;
+    transition: var(--transition);
+  }
+  
+  .stat-container:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .stat-name {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #818cf8, #6366f1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Animations */
+  @keyframes ascendFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .container {
+      padding: 1.5rem;
+    }
+  
+    h1 {
+      font-size: 2.25rem;
+    }
+  
+    #pokemon-sprite {
+      width: 150px;
+      height: 150px;
+    }
+  
+    #name-id, #weight-height {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.75rem;
+    }
+  }
+
+  /* Add this to your existing CSS */
+#types span {
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    color: white;
+    font-weight: 500;
+    text-transform: capitalize;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    display: inline-block;
+    margin: 0.25rem;
+}
+
+#types span:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Add type-specific colors */
+#types span.normal {
+    background: linear-gradient(135deg, #a8a878, #8a8a5c);
+}
+
+#types span.fire {
+    background: linear-gradient(135deg, #f08030, #cc6a28);
+}
+
+#types span.water {
+    background: linear-gradient(135deg, #6890f0, #4a6fc8);
+}
+
+#types span.electric {
+    background: linear-gradient(135deg, #f8d030, #d4b020);
+}
+
+#types span.grass {
+    background: linear-gradient(135deg, #78c850, #5ca838);
+}
+
+#types span.ice {
+    background: linear-gradient(135deg, #98d8d8, #7ab8b8);
+}
+
+#types span.fighting {
+    background: linear-gradient(135deg, #c03028, #a02020);
+}
+
+#types span.poison {
+    background: linear-gradient(135deg, #a040a0, #804080);
+}
+
+#types span.ground {
+    background: linear-gradient(135deg, #e0c068, #c0a050);
+}
+
+#types span.flying {
+    background: linear-gradient(135deg, #a890f0, #8870c8);
+}
+
+#types span.psychic {
+    background: linear-gradient(135deg, #f85888, #d84070);
+}
+
+#types span.bug {
+    background: linear-gradient(135deg, #a8b820, #8c9c18);
+}
+
+#types span.rock {
+    background: linear-gradient(135deg, #b8a038, #988020);
+}
+
+#types span.ghost {
+    background: linear-gradient(135deg, #705898, #584070);
+}
+
+#types span.dragon {
+    background: linear-gradient(135deg, #7038f8, #5828c8);
+}
+
+#types span.dark {
+    background: linear-gradient(135deg, #705848, #584030);
+}
+
+#types span.steel {
+    background: linear-gradient(135deg, #b8b8d0, #9898b0);
+}
+
+#types span.fairy {
+    background: linear-gradient(135deg, #ee99ac, #d87f92);
+}
+
+
+.stats-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+#sprite{
+    width: 35%;
+}
+/* Center stats within the container */
+.stats-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 1rem; /* Add spacing between stats */
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.05);
+    border: var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--glass-shadow);
+}
+
+.stats-container .stat {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.05);
+    border: var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--glass-shadow);
+    transition: var(--transition);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    min-width: 120px; /* Optional: Set a minimum width for consistency */
+}
+
+.stats-container .stat:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.stats-container .stat .stat-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+}
+
+.stats-container .stat .stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
