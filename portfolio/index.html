@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gian - Portfolio</title>
+<style>
+ 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ 
+  body {
+    font-family: 'Courier New', monospace;
+    background-color: #1a1a1f;
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  a {
+    color: #eee;
+    text-decoration: none;
+  }
+ 
+  a:hover {
+    color: #e05a4a;
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
+
+
+  nav {
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+  }
+ 
+  nav .logo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #eee;
+    margin-bottom: 10px;
+  }
+ 
+  nav ul {
+    list-style: none;
+  }
+ 
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  section {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+  }
+
+
+  h2 {
+    color: #eee;
+    font-size: 22px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
+ 
+  h3, h4 {
+    color: #eee;
+    margin-bottom: 10px;
+  }
+
+  span {
+    color: #e05a4a;
+  }
+
+  .btn {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 6px 16px;
+    margin-top: 10px;
+    color: #ccc;
+  }
+ 
+  .btn:hover {
+    border-color: #e05a4a;
+    color: #e05a4a;
+  }
+
+  /* Project Layouts */
+  .project-list {
+    margin-top: 20px;
+  }
+
+  .project-card {
+    background-color: #22222a;
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+
+  .skill-box {
+    background-color: #22222a;
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+
+  footer {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 80px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ 
+  .footer-info {
+    margin-bottom: 20px;
+  }
+
+  .copyright {
+    font-size: 12px;
+    color: #666;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Gian</div>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Portfolio</a></li>
+    <li><a href="#contacts">Contacts</a></li>
+  </ul>
+</nav>
+
+<section>
+  <h1>Gian is a <span>web designer</span> and <span>front-end developer</span></h1>
+  <p>He crafts responsive websites where technologies meet creativity.</p>
+  <a href="#contacts" class="btn">Contact me</a>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+ 
+  <div class="project-list">
+    <div class="project-card">
+      <h3>🤖 Discord Bot</h3>
+      <p><strong>Language:</strong> Python</p>
+      <p>A fun utility bot created for Discord servers.</p>
+      <a href="#" class="btn">Live Link</a>
+    </div>
+
+    <div class="project-card">
+      <h3>🌦 Weather App</h3>
+      <p><strong>Language:</strong> HTML / SCSS</p>
+      <p>An interactive application to view live global weather updates.</p>
+      <a href="#" class="btn">Live Link</a>
+    </div>
+
+    <div class="project-card">
+      <h3>💬 Chat App</h3>
+      <p><strong>Language:</strong> Node.js</p>
+      <p>A real-time web application for instantaneous user chatting.</p>
+      <a href="#" class="btn">Live Link</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+ 
+  <div class="skill-box">
+    <h4>Languages</h4>
+    <p>TypeScript, Lua, Python, JavaScript</p>
+  </div>
+ 
+  <div class="skill-box">
+    <h4>Databases & Frameworks</h4>
+    <p>SQLite, PostgreSQL, MongoDB, React, Vue, Express</p>
+  </div>
+ 
+  <div class="skill-box">
+    <h4>Tools & Systems</h4>
+    <p>VSCode, Neovim, Linux, Git, Figma</p>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p><strong>Hello, I'm Gian!</strong></p>
+  <p>I am passionate about creating clean layouts and solving interesting structural problems with frontend code.</p>
+  <p>When I am not styling websites, I study structural database designs and read up on computer tools.</p>
+</section>
+
+<section id="contacts">
+  <h2>Contacts</h2>
+  <p>If you would like to collaborate or just have a chat, please reach out to me below!</p>
+  <p>Email: <strong>gian@gian.com</strong></p>
+</section>
+
+<footer>
+  <div class="footer-info">
+    <p><strong>🔴 Gian</strong></p>
+    <p>Front-End Developer</p>
+  </div>
+  <div class="copyright">© Copyright 2026. Made by Gian</div>
+</footer>
+
+</body>
+</html>
