@@ -71,8 +71,8 @@ display: flex;
 
 h3::before {
   content: "# ";
+  color: #e05a4a;
 }
-
 
   h3, h4 {
     color: #eee;
