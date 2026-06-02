@@ -68,7 +68,11 @@ display: flex;
     padding-bottom: 5px;
     margin-bottom: 20px;
   }
- 
+
+ h3::before {
+content:"#";
+ } 
+
   h3, h4 {
     color: #eee;
     margin-bottom: 10px;
