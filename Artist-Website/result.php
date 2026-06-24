@@ -1,14 +1,8 @@
 <?php
-// Secure route guarding: Redirect back if someone tries to view the page without submitting
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: index.html"); // Change to your landing page filename if it's index.php
-    exit();
-}
-
-// Capture and sanitize input data
-$fullname = htmlspecialchars(trim($_POST['fullname'] ?? ''));
-$email    = htmlspecialchars(trim($_POST['email'] ?? ''));
-$location = htmlspecialchars(trim($_POST['location'] ?? ''));
+// Capture basic input data directly from the form POST
+$fullname = $_POST['fullname'];
+$email    = $_POST['email'];
+$location = $_POST['location'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +102,7 @@ $location = htmlspecialchars(trim($_POST['location'] ?? ''));
             <div class="data-value"><?php echo $location; ?></div>
         </div>
 
-        <a href="index.php" class="btn-return">Back to home</a>
+        <a href="index.html" class="btn-return">Back to home</a>
     </div>
 
 </body>
