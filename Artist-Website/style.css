@@ -1,0 +1,895 @@
+/* --- Global Resets & Variables --- */
+:root {
+  --bg-dark: #0a0a0a;
+  --text-light: #ffffff;
+  --text-muted: #aaaaaa;
+  --accent-red: #da0037; /* A nod to After Hours / Blinding Lights era */
+  --nav-height: 80px;
+  --font-main: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-main);
+}
+
+.hero-header {
+  background: url("images/background.png") no-repeat center center / contain;
+  min-height: 100vh; /* Takes up the full height of the screen */
+  max-height: 1000px;
+  position: relative; /* Essential if you are using position: fixed/absolute inside it */
+}
+.main-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  z-index: 1000;
+  background-color: rgba(10, 10, 10, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+  max-width: 1500px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Brand / Logo --- */
+.nav-brand {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transition: letter-spacing 0.3s ease, color 0.3s ease;
+}
+
+.nav-brand:hover {
+  color: var(--accent-red);
+  letter-spacing: 6px; /* Subtle expansion effect on hover */
+}
+
+/* --- Nav Links --- */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover state for links */
+.nav-links a:hover {
+  color: var(--text-light);
+}
+
+/* Animated underline effect */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-red);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+
+
+
+/* --- Quick Fix for Hero Content spacing --- */
+.hero-header {
+  padding-top: var(--nav-height); /* Prevents the fixed navbar from overlapping your hero text */
+}
+
+
+/* Main Hero Content */
+.hero-content{
+width: 100%;
+height: 90vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem; /* Gives breathing room on the screen edges */
+  display: flex;
+  flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+
+/* --- Massive Typography --- */
+.hero-title {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 0.85; /* Squashes the lines together like the image */
+  text-transform: uppercase;
+  letter-spacing: -2px; /* Tight tracking for that aggressive aesthetic */
+  margin-bottom: 3rem;
+}
+
+.title-line-1 {
+  display: block;
+  font-size:  clamp(6rem, 15vw, 12rem); /* Fluid sizing based on screen width */
+}
+
+.title-line-2 {
+  display: block;
+  font-size: clamp(6rem, 15vw, 12rem); /* Makes 'WEEKND' significantly larger */
+}
+
+.hero-actions {
+  margin-top: 10rem;  
+
+}
+
+/* Button Style */
+.btn-primary {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  
+  /* Creates the oval/pill shape from the screenshot */
+  padding: 1rem 2.5rem;
+  border: 2px solid #ffffff;
+  border-radius: 50px; 
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.btn-primary:hover {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* End of Header */
+
+
+/* ==========================================================================
+   5. DISCOGRAPHY SECTION FIX (FULL SCREEN UPDATE)
+   ========================================================================== */
+section#discography {
+  height: auto;
+  min-height: 100vh; /* Forces the section to take up the full screen height */
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.discography-section {
+  width: 100%;
+  min-height: 100vh; /* Commands the full view height edge-to-edge */
+  padding: 80px 40px; /* Expanded padding for clean screen-edge breathing room */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8B0000; /* Deep red background */
+  color: #FFFFFF;
+  font-family: 'Arial Black', sans-serif;
+  box-sizing: border-box;
+}
+
+.discography-container {
+  width: 100%;
+  max-width: 1400px; /* Wider container to spread components beautifully across wide screens */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.discography-title {
+  font-size: clamp(3.5rem, 8vw, 6rem); /* Scaled up fluid typography to match screen dominance */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  margin-bottom: 35px; /* Generous separation from the card track grid */
+  color: black;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* Screen-Stretched 3-Card Balanced Grid */
+.discography-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Perfect edge-to-edge horizontal layout split */
+  gap: 60px; /* Clean, intentional breathing room across full display width */
+  width: 100%;
+  justify-content: center;
+}
+
+/* Individual Cards */
+.discography-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.discography-image-wrapper {
+  width: 100%;
+  max-width: 340px; /* Boosted image scale profile to balance screen presence */
+  aspect-ratio: 1 / 1;
+  border-radius: 40px; /* Ultra-smooth rounded aesthetic */
+  overflow: hidden;
+  margin-bottom: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); /* Deepened shadow weight for visual lift */
+}
+
+.discography-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Typography inside Cards */
+.album-title {
+  font-size: 1.3rem; /* Slightly larger text tracking for cinematic feel */
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+
+.album-description {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 310px; /* Expanded width footprint to map with larger images */
+  color: #E0E0E0; /* Slightly off-white readability tint */
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN FOR DISCOGRAPHY
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .discography-section {
+    padding: 80px 20px;
+    height: auto; /* Drops down to responsive auto-growth safely on mobile frames */
+  }
+  
+  .discography-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+  }
+}
+
+@media (max-width: 490px) {
+  .discography-grid {
+    grid-template-columns: 1fr; /* Clean single track configuration stack for mobile viewports */
+  }
+  
+  .discography-image-wrapper {
+    max-width: 280px;
+  }
+}
+
+
+/* ==========================================================================
+   6. TOUR ITINERARY SECTION (NEON STYLE - FULL SCREEN UPDATE)
+   ========================================================================== */
+.itinerary-section {
+  background-color: #dfff00; /* Intense neon yellow/green background */
+  color: #000000;            /* Heavy black contrast text */
+  padding: 6rem 4rem;        /* Expanded horizontal padding for edge-to-edge look */
+  font-family: Arial, sans-serif; 
+  
+  /* --- Screen Coverage Fixes --- */
+  width: 100%;
+  min-height: 100vh;         /* Forces section to be at least full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* Centering content vertically */
+  align-items: center;       /* Centering content horizontally */
+}
+
+.itinerary-container {
+  width: 100%;
+  max-width: 100%;           /* Stripped the 1200px limit to cover full width */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.itinerary-main-title {
+  text-align: center;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
+
+/* 3-Column Screen-Stretched Layout */
+.itinerary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;                 /* Increased spacing for wide screen real estate */
+  align-items: start;
+  width: 100%;
+}
+
+/* Column Headers */
+.column-header {
+  margin-bottom: 3rem;
+  text-align: left;          /* Clean editorial alignment for lists */
+}
+
+.phase-subtitle {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.phase-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+/* Events Timeline Rows */
+.timeline-events {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.event-item {
+  padding: 2rem 0;           /* More breathing room inside the stretched list rows */
+  border-bottom: 3px solid #000000; /* Slightly thicker line to match screen weight */
+  text-align: left;
+}
+
+.event-time {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.event-name {
+  font-size: 1.3rem;         /* Scaled up text sizing to better fit wide monitors */
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN FOR ITINERARY
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .itinerary-section {
+    padding: 6rem 2rem;
+    height: auto;            /* Allow natural growth on tablet/mobile views */
+  }
+  
+  .itinerary-grid {
+    grid-template-columns: 1fr; /* Stacks column sections seamlessly */
+    gap: 5rem;
+  }
+  
+  .itinerary-main-title {
+    margin-bottom: 3rem;
+  }
+  
+  .column-header {
+    margin-bottom: 1.5rem;
+    text-align: center;      /* Center up headers when stacked */
+  }
+
+  .event-item {
+    text-align: center;      /* Center up events lists when stacked */
+  }
+}
+
+
+/* ==========================================================================
+   10. ENHANCED TOUR SPOTLIGHT SECTION (SCALED UP DESIGN)
+   ========================================================================== */
+.spotlight-section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 60px; /* Expanded global block padding */
+  box-sizing: border-box;
+}
+
+.spotlight-container {
+  width: 100%;
+  max-width: 1400px; /* FIX: Scaled up width to maximize desktop screens footprint */
+  display: grid;
+  /* FIX: Adjusted grid balance allocation to favor an enlarged map canvas view */
+  grid-template-columns: 1.2fr 1fr; 
+  gap: 100px; /* Widened separation path gap spacing */
+  align-items: center;
+}
+
+/* --- Left Side: Massive Map Window Window --- */
+.spotlight-media-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.map-window-frame {
+  width: 100%;
+  /* FIX: Adjusted landscape tracking ratio to give the map deeper vertical presence */
+  aspect-ratio: 16 / 11; 
+  background: #111111;
+  border: 5px solid #1a1a1a; /* Thicker framing weight rule */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.85);
+}
+
+.map-window-frame iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+/* --- Right Side: Amplified Scale Editorial Content --- */
+.spotlight-text-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  color: #ffffff;
+  width: 100%;
+}
+
+.spotlight-eyebrow {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.95rem; /* Scaled up identifier text link */
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--accent-red);
+  margin-bottom: 16px;
+}
+
+.spotlight-heading {
+  font-family: 'Arial Black', sans-serif;
+  /* FIX: Enlarged fluid typographic bounds for maximum visual weight headline */
+  font-size: clamp(3.5rem, 6.5vw, 5.5rem); 
+  font-weight: 900;
+  letter-spacing: -2px; /* Aggressive, bold track spacing overlap */
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin-bottom: 30px;
+}
+
+.spotlight-description {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.25rem; /* FIX: Bumped up description reading text from 1.1rem to 1.25rem */
+  line-height: 1.75;
+  color: #cccccc;
+  max-width: 600px; /* Expanded reading boundary limit container */
+}
+
+.highlight-text {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT TRANSLATIONS
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .spotlight-container {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 968px) {
+  .spotlight-section {
+    padding: 80px 30px;
+    height: auto;
+  }
+
+  .spotlight-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .spotlight-text-panel {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .spotlight-description {
+    max-width: 100%; /* Spans full horizontal channel boundary smoothly on small screens */
+  }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   8. INTERACTIVE TRACKLIST SYSTEM (LIGHT SECTION UPDATE)
+   ========================================================================== */
+.tracklist-section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-light); /* Sets the entire section background to a lighter color */
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.tracklist-section-title-block {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+  text-align: left; /* Clean structural alignment matching editorial media guides */
+}
+
+.tracklist-section-title {
+  font-family: 'Arial Black', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: var(--text-dark); /* Bold dark text contrasting the light background */
+  line-height: 1;
+}
+
+/* --- Inner Premium Floating Dashboard Panel --- */
+.tracklist-container {
+  width: 100%;
+  max-width: 1200px;
+  background: #0f0f0f; /* High-contrast pure dark internal dashboard card */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  box-sizing: border-box;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15); /* Soft premium drop-shadow layer */
+  margin: 0 auto; 
+}
+
+.tracklist-layout-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr; 
+  gap: 60px;
+  align-items: stretch; 
+}
+
+/* --- Left Panel Layout --- */
+.tracklist-poster-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%; 
+}
+
+.display-art-frame {
+  width: 100%;
+  max-width: 480px; 
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.75);
+  margin-bottom: 15px; 
+  flex-grow: 1; 
+}
+
+.current-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.current-title {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.current-year {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  color: var(--accent-red);
+  font-weight: 600;
+}
+
+/* --- Right Panel Table View --- */
+.tracklist-table-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.table-header-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 100px 60px;
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.track-item-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 100px 60px;
+  padding: 16px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  align-items: center;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.track-item-row:hover {
+  background: rgba(218, 0, 55, 0.15); 
+  color: #ffffff;
+}
+
+.row-idx-num { color: var(--text-muted); }
+.row-song-title { font-weight: 700; }
+.row-song-time { color: var(--text-muted); }
+
+.btn-row-play {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.track-item-row:hover .btn-row-play {
+  color: var(--accent-red);
+}
+
+/* --- Responsive Adaptations --- */
+@media (max-width: 968px) {
+  .tracklist-section {
+    padding: 80px 20px;
+    height: auto;
+  }
+  .tracklist-section-title-block {
+    text-align: center;
+  }
+}
+
+@media (max-width: 850px) {
+  .tracklist-container {
+    padding: 30px 15px;
+  }
+  .tracklist-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* --- XO Syndicate Contact Section --- */
+.syndicate-section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000; /* Pure black backdrop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+.syndicate-container {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two-column grid split */
+  gap: 60px;
+  align-items: center;
+}
+
+/* --- Left Column: Asymmetrical Window Layout --- */
+.branding-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-wrapper {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1.1 / 1;
+  background-color: #000000;
+  border-radius: 0 0 60px 0; /* Distinct single-corner curve */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+  /* Hard offset brutalist shadow stack */
+  box-shadow: 12px 12px 0px #555555, 24px 24px 0px #222222;
+}
+
+.xo-display-logo {
+  max-width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* --- Right Column: The Contact Dashboard --- */
+.form-panel-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.syndicate-main-title {
+  color: #B0C4DE; /* Light blue-gray typography */
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.red-form-card {
+  background-color: #A30000; /* Solid crimson frame fill */
+  padding: 40px 30px;
+  box-sizing: border-box;
+  /* Crisp outline offset drop lines */
+  box-shadow: 12px 12px 0px #000000, 14px 14px 0px #A30000;
+}
+
+.form-card-title {
+  color: #FFFF00; /* Vivid yellow accent header text */
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin-bottom: 35px;
+}
+
+/* --- Input Form Inner Fields --- */
+.syndicate-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.syndicate-label {
+  color: #FFFF00;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.syndicate-input {
+  background-color: #700000; /* Darkened inside track red tint */
+  border: none;
+  height: 48px;
+  padding: 0 15px;
+  color: #FFFFFF;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.syndicate-input:focus {
+  outline: 2px solid #FFFF00;
+}
+
+/* --- Block Submit Button Elements --- */
+.btn-syndicate-submit {
+  width: 100%;
+  background-color: #FFFF00;
+  color: #000000;
+  border: none;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  padding: 16px 0;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+  box-shadow: 5px 5px 0px #000000;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.btn-syndicate-submit:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0px #000000;
+}
+
+/* --- Standard Sticky Project Footer --- */
+.main-footer {
+  width: 100%;
+  background-color: #000000;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid #222222;
+}
+
+.footer-copy {
+  color: #555555;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* --- Responsive Layout Rules --- */
+@media (max-width: 900px) {
+  .syndicate-container {
+    grid-template-columns: 1fr; /* Switch cleanly to a stack format */
+    gap: 60px;
+  }
+  
+  .logo-wrapper {
+    max-width: 360px;
+  }
+}
+
+
+
