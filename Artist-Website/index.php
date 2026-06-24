@@ -211,20 +211,17 @@
 <!-- Dedicated Interactive Tracklist Section -->
 <section id="interactive-tracklist" class="tracklist-section" aria-label="Interactive Album Tracklist">
   
-
   <div class="tracklist-container">
     <div class="tracklist-layout-grid">
       
-      <!-- Left Column: Active Selected Album Poster Display -->
       <div class="tracklist-poster-panel">
         <div class="display-art-frame">
-          <img id="active-album-art" src="images/after-hours.jpg" alt="Active Album Artwork" class="current-art">
+          <img id="active-album-art" src="images/after-hours.jpg" alt="After Hours Album Artwork" class="current-art">
         </div>
         <h3 id="active-album-title" class="current-title">AFTER HOURS</h3>
         <span id="active-album-year" class="current-year">2020</span>
       </div>
 
-      <!-- Right Column: Interactive Tracklist Table Display -->
       <div class="tracklist-table-panel">
         <div class="table-header-row">
           <span class="col-idx">#</span>
@@ -234,14 +231,97 @@
         </div>
         
         <div id="track-rows-target" class="track-rows-container">
-          <!-- Populated dynamically via JS -->
+          
+          <div class="track-item-row">
+            <span class="row-idx-num">1</span>
+            <span class="row-song-title">Alone Again</span>
+            <span class="row-song-time">4:10</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
+          <div class="track-item-row">
+            <span class="row-idx-num">2</span>
+            <span class="row-song-title">Too Late</span>
+            <span class="row-song-time">3:59</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
+          <div class="track-item-row">
+            <span class="row-idx-num">3</span>
+            <span class="row-song-title">Hardest To Love</span>
+            <span class="row-song-time">3:31</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
+          <div class="track-item-row">
+            <span class="row-idx-num">4</span>
+            <span class="row-song-title">Scared To Live</span>
+            <span class="row-song-time">3:11</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
+          <div class="track-item-row">
+            <span class="row-idx-num">5</span>
+            <span class="row-song-title">Snowchild</span>
+            <span class="row-song-time">4:07</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
+          <div class="track-item-row">
+            <span class="row-idx-num">6</span>
+            <span class="row-song-title">Escape From LA</span>
+            <span class="row-song-time">5:55</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
+          <div class="track-item-row">
+            <span class="row-idx-num">7</span>
+            <span class="row-song-title">Heartless</span>
+            <span class="row-song-time">3:18</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
+          <div class="track-item-row">
+            <span class="row-idx-num">8</span>
+            <span class="row-song-title">Faith</span>
+            <span class="row-song-time">4:43</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
+          <div class="track-item-row">
+            <span class="row-idx-num">9</span>
+            <span class="row-song-title">Blinding Lights</span>
+            <span class="row-song-time">3:20</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
+          <div class="track-item-row">
+            <span class="row-idx-num">10</span>
+            <span class="row-song-title">In Your Eyes</span>
+            <span class="row-song-time">3:57</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
+          <div class="track-item-row">
+            <span class="row-idx-num">11</span>
+            <span class="row-song-title">Save Your Tears</span>
+            <span class="row-song-time">3:35</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
+          <div class="track-item-row">
+            <span class="row-idx-num">12</span>
+            <span class="row-song-title">After Hours</span>
+            <span class="row-song-time">6:01</span>
+            <button class="btn-row-play" aria-label="Play track">▶</button>
+          </div>
+
         </div>
       </div>
 
     </div>
   </div>
 </section>
-
 
 <!-- VIP Contact Section (XO Syndicate) -->
 <section id="vip" class="syndicate-section" aria-label="Join The XO Syndicate">
