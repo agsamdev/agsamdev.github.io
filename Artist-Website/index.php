@@ -29,8 +29,8 @@
   <div class="hero-background" role="img" aria-label="The Weeknd in profile holding a glowing metallic mask on stage">
     <div class="hero-content">
       <h1 class="hero-title">
-        <span class="title-line-1">The</span>
-        <span class="title-line-2">Weeknd</span>
+        <span class="title-line">The</span> <br>
+        <span class="title-line">Weeknd</span>
       </h1>
       <div class="hero-actions">
         <a href="#tickets" class="btn-primary" aria-label="Book your spot for The Weeknd tour">
@@ -208,7 +208,6 @@
 
 
 
-<!-- Dedicated Interactive Tracklist Section -->
 <section id="interactive-tracklist" class="tracklist-section" aria-label="Interactive Album Tracklist">
   
   <div class="tracklist-container">
@@ -232,88 +231,124 @@
         
         <div id="track-rows-target" class="track-rows-container">
           
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('Alone Again')">
             <span class="row-idx-num">1</span>
             <span class="row-song-title">Alone Again</span>
             <span class="row-song-time">4:10</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/alone-again.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('Too Late')">
             <span class="row-idx-num">2</span>
             <span class="row-song-title">Too Late</span>
             <span class="row-song-time">3:59</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/too-late.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('Hardest To Love')">
             <span class="row-idx-num">3</span>
             <span class="row-song-title">Hardest To Love</span>
             <span class="row-song-time">3:31</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/hardest-to-love.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('Scared To Live')">
             <span class="row-idx-num">4</span>
             <span class="row-song-title">Scared To Live</span>
             <span class="row-song-time">3:11</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/scared-to-live.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('Snowchild')">
             <span class="row-idx-num">5</span>
             <span class="row-song-title">Snowchild</span>
             <span class="row-song-time">4:07</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/snowchild.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('Escape From LA')">
             <span class="row-idx-num">6</span>
             <span class="row-song-title">Escape From LA</span>
             <span class="row-song-time">5:55</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/escape-from-la.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('Heartless')">
             <span class="row-idx-num">7</span>
             <span class="row-song-title">Heartless</span>
             <span class="row-song-time">3:18</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/heartless.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('Faith')">
             <span class="row-idx-num">8</span>
             <span class="row-song-title">Faith</span>
             <span class="row-song-time">4:43</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/faith.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('Blinding Lights')">
             <span class="row-idx-num">9</span>
             <span class="row-song-title">Blinding Lights</span>
             <span class="row-song-time">3:20</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/blinding-lights.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('In Your Eyes')">
             <span class="row-idx-num">10</span>
             <span class="row-song-title">In Your Eyes</span>
             <span class="row-song-time">3:57</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/in-your-eyes.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('Save Your Tears')">
             <span class="row-idx-num">11</span>
             <span class="row-song-title">Save Your Tears</span>
             <span class="row-song-time">3:35</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/save-your-tears.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
-          <div class="track-item-row">
+          <div class="track-item-row" onclick="playTrack('After Hours')">
             <span class="row-idx-num">12</span>
             <span class="row-song-title">After Hours</span>
             <span class="row-song-time">6:01</span>
-            <button class="btn-row-play" aria-label="Play track">▶</button>
+            <audio controls onclick="event.stopPropagation();">
+              <source src="audio/after-hours.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
 
         </div>
@@ -378,4 +413,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
