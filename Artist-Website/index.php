@@ -235,7 +235,7 @@
             <span class="row-idx-num">1</span>
             <span class="row-song-title">Alone Again</span>
             <span class="row-song-time">4:10</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls >
               <source src="audio/alone-again.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -245,7 +245,7 @@
             <span class="row-idx-num">2</span>
             <span class="row-song-title">Too Late</span>
             <span class="row-song-time">3:59</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls >
               <source src="audio/too-late.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -255,7 +255,7 @@
             <span class="row-idx-num">3</span>
             <span class="row-song-title">Hardest To Love</span>
             <span class="row-song-time">3:31</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls>
               <source src="audio/hardest-to-love.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -265,7 +265,7 @@
             <span class="row-idx-num">4</span>
             <span class="row-song-title">Scared To Live</span>
             <span class="row-song-time">3:11</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls >
               <source src="audio/scared-to-live.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -275,7 +275,7 @@
             <span class="row-idx-num">5</span>
             <span class="row-song-title">Snowchild</span>
             <span class="row-song-time">4:07</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls >
               <source src="audio/snowchild.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -285,7 +285,7 @@
             <span class="row-idx-num">6</span>
             <span class="row-song-title">Escape From LA</span>
             <span class="row-song-time">5:55</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls >
               <source src="audio/escape-from-la.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -295,7 +295,7 @@
             <span class="row-idx-num">7</span>
             <span class="row-song-title">Heartless</span>
             <span class="row-song-time">3:18</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls >
               <source src="audio/heartless.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -305,7 +305,7 @@
             <span class="row-idx-num">8</span>
             <span class="row-song-title">Faith</span>
             <span class="row-song-time">4:43</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls >
               <source src="audio/faith.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -315,7 +315,7 @@
             <span class="row-idx-num">9</span>
             <span class="row-song-title">Blinding Lights</span>
             <span class="row-song-time">3:20</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls >
               <source src="audio/blinding-lights.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -325,7 +325,7 @@
             <span class="row-idx-num">10</span>
             <span class="row-song-title">In Your Eyes</span>
             <span class="row-song-time">3:57</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls >
               <source src="audio/in-your-eyes.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -335,7 +335,7 @@
             <span class="row-idx-num">11</span>
             <span class="row-song-title">Save Your Tears</span>
             <span class="row-song-time">3:35</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls >
               <source src="audio/save-your-tears.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -345,7 +345,7 @@
             <span class="row-idx-num">12</span>
             <span class="row-song-title">After Hours</span>
             <span class="row-song-time">6:01</span>
-            <audio controls onclick="event.stopPropagation();">
+            <audio controls >
               <source src="audio/after-hours.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
