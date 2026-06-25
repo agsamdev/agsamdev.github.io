@@ -161,7 +161,7 @@
 </section>
 
 <section id="media-spotlight" class="video-section" aria-label="Cinematic Video Spotlight" style="background-color: #000000; padding: 80px 24px; display: flex; justify-content: center; align-items: center; box-sizing: border-box; width: 100%; overflow: hidden;">
-  <div class="video-container" style="max-width: 1200px; width: 100%; display: grid; grid-template-columns: 55% 40%; column-gap: 5%; align-items: center; box-sizing: border-box;">
+  <div class="video-container" style="max-width: 1200px; width: 100%; display: grid; grid-template-columns: 55% ; column-gap: 5%; align-items: center; box-sizing: border-box;">
     
     <div class="video-media-panel" style="width: 100%; position: relative; box-sizing: border-box;">
       <div class="video-window-frame" style="background-color: #111111; border: 1px solid #333333; line-height: 0; box-shadow: 8px 8px 0px #222222, 16px 16px 0px #111111; width: 100%; box-sizing: border-box;">
